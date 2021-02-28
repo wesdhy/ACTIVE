@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="vrchat_active.Views.worinfo">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Frame x:Name="Framelog" >
+                    <Image Grid.RowSpan="4" 
+                                   Source="{Binding thumbnailImageUrl}" 
+                                   Aspect="AspectFill"
+                                   HeightRequest="150"
+                                   WidthRequest="300" />
+                </Frame>
+                <Frame x:Name="Framelog2" >
+                    <Grid Padding="10" x:Name="Framelog3" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="30" />
+
+
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+
+
+                        </Grid.ColumnDefinitions>
+
+
+                        <Label Grid.Column="1"  FontSize="Medium"
+                                   Text="{Binding name}" 
+                                   FontAttributes="Bold"
+                      TextColor="Gray"/>
+
+
+
+
+                    </Grid>
+
+                </Frame>
+
+
+
+                <Label FontSize="Small" Text="authorName" FontAttributes="Bold" TextColor="Gray" />
+                <Label FontSize="Small" Text="{Binding authorName}" TextColor="Gray" />
+
+                <Label FontSize="Small" Text="World id" FontAttributes="Bold"  TextColor="Gray"/>
+                <Label FontSize="Small" Text="{Binding id}" TextColor="Gray" />
+
+
+                <Label FontSize="Small" Text=" capacity" FontAttributes="Bold" TextColor="Gray" />
+                <Label FontSize="Small" Text="{Binding  capacity}" TextColor="Gray" />
+
+                <Label FontSize="Small" Text=" favorites" FontAttributes="Bold" TextColor="Gray" />
+                <Label FontSize="Small" Text="{Binding  favorites}" TextColor="Gray" />
+
+                <Label FontSize="Small" Text=" visits" FontAttributes="Bold" TextColor="Gray" />
+                <Label FontSize="Small" Text="{Binding  visits}" TextColor="Gray" />
+
+                <Label FontSize="Small" Text=" popularity" FontAttributes="Bold" TextColor="Gray" />
+                <Label FontSize="Small" Text="{Binding  popularity}" TextColor="Gray" />
+
+                <Label FontSize="Small" Text=" heat" FontAttributes="Bold" TextColor="Gray" />
+                <Label FontSize="Small" Text="{Binding  heat}" TextColor="Gray" />
+
+                <Label FontSize="Small" Text=" occupants" FontAttributes="Bold" TextColor="Gray"/>
+                <Label FontSize="Small" Text="{Binding  occupants}" TextColor="Gray" />
+
+
+
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

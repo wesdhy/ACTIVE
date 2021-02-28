@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:vrchat_active"
+             mc:Ignorable="d"
+             x:Class="vrchat_active.MainPage">
+    
+    
+    
+
+    <ScrollView>
+
+        
+        
+        <StackLayout>
+        <!-- Place new controls here -->
+
+
+           
+            
+            <Frame x:Name="Framelog"> 
+                
+                <Grid x:Name="Gridlog"
+                   HorizontalOptions="FillAndExpand" 
+                  VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions> 
+                    <Label Text="Username" FontSize="Small" TextColor="Gray" Grid.Row="1" Grid.Column="1" VerticalOptions="Center" />
+                    <Label  Text="Password" FontSize="Small" TextColor="Gray" Grid.Row="2" Grid.Column="1" VerticalOptions="Center" />
+                    <Label  Text="saving account" FontSize="Small" TextColor="Gray" Grid.Row="3" Grid.Column="1" VerticalOptions="Center" />
+                    <Label  Text="nightmode" FontSize="Small" TextColor="Gray" Grid.Row="4" Grid.Column="1" VerticalOptions="Center" />
+                    <Label  Text="Two-Factor auth" FontSize="Small" TextColor="Gray" Grid.Row="5" Grid.Column="1" VerticalOptions="Center" />
+                    <Entry x:Name="userid" Text="{Binding Title}" Placeholder="(username or e-mail)" Completed="OnChange" Grid.Row="1" Grid.Column="2" TextColor="Gray" PlaceholderColor="Azure" />
+                    <Entry x:Name="passid" Text="{Binding pass}" Placeholder="(Password)" Completed="OnChange" Grid.Row="2" Grid.Column="2" IsPassword="true" TextColor="Gray" PlaceholderColor="Azure" />
+
+                <Switch x:Name="notificationsEnabled"   Toggled="OnChange" Grid.Row="3" Grid.Column="2" ThumbColor="Gray"/>
+                <Switch x:Name="nightmode"   Toggled="OnChangenightmode" Grid.Row="4" Grid.Column="2" ThumbColor="Gray"/>
+
+                    <Entry x:Name="motp" Text="{Binding motp}" Placeholder="(MOTP code)" Completed="OnChange" Grid.Row="5" Grid.Column="2" TextColor="Gray" PlaceholderColor="Azure" />
+
+
+
+                <Button  x:Name="buttpro"  Text="Log In" TextColor="White" Grid.Row="6" Grid.Column="2" BackgroundColor="#489CFF" Clicked="OnButtonClicked"  />
+                <Button Text="VRchat Home" TextColor="White" Grid.Row="7" Grid.Column="2" BackgroundColor="#A6A6A6" Clicked="OnButtonClicked2" />
+               
+
+                
+
+                    
+
+
+
+                </Grid>
+
+        </Frame>
+
+
+            <Frame x:Name="infoFramelog" >
+
+                <Grid  x:Name="infoGridlog"
+                   HorizontalOptions="FillAndExpand" 
+                  VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+
+                <Label  Text="this application used unofficial VRChat API." FontSize="15" TextColor="Gray"  Grid.Row="1" Grid.Column="2" />
+                <Label  Text="Steam and Oculus accounts are not supported." FontSize="15" TextColor="Gray"  Grid.Row="2" Grid.Column="2" />
+                <Label  Text="Excessive friend list Refresh temporarily blocks the account." FontSize="15" TextColor="Gray"  Grid.Row="3" Grid.Column="2" />
+                <Label  Text="This app is not a game." FontSize="15" TextColor="Gray"  Grid.Row="4" Grid.Column="2" />
+                
+                <Label  Text="© 2020 wesdhy" FontSize="12" TextColor="Gray"  Grid.Row="5" Grid.Column="2" />
+
+                   
+                </Grid>
+            
+            </Frame>
+            
+            <ActivityIndicator x:Name="ActivityIndicator2" IsRunning="False" />
+
+            
+
+
+        </StackLayout>
+        
+        
+        </ScrollView>
+</ContentPage>

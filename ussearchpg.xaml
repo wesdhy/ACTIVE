@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+               Title="user"
+             x:Class="vrchat_active.Views.ussearchpg">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Entry x:Name="locationid" 
+                                 Text = "{Binding locationid.Text}" TextColor="Gray" PlaceholderColor="Azure" Placeholder="(search)"
+                                 VerticalOptions = "End" />
+            
+            <Button Text="search" TextColor="White" Grid.Row="3" Grid.Column="1" Clicked="OnButtonClicked" BackgroundColor="DarkSlateBlue"  />
+
+
+           
+
+
+
+
+            <ListView x:Name="listpro" IsPullToRefreshEnabled="False"
+                  ItemSelected="OnSelection" 
+            ItemsSource="{Binding userlist}"
+                  HasUnevenRows="true"
+                  
+                  >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="20" />
+                                    <RowDefinition Height="20" />
+                                    <RowDefinition Height="20" />
+
+
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+
+                                </Grid.ColumnDefinitions>
+
+
+                                <Image Grid.RowSpan="3" 
+                                   Source="{Binding currentAvatarThumbnailImageUrl}" 
+                                   Aspect="AspectFill"
+                                   HeightRequest="100"
+                                   WidthRequest="100" />
+
+                                <Label Grid.Column="1" 
+                                   Text="{Binding displayName}" TextColor="Gray"
+                                   FontAttributes="Bold" />
+
+
+                                <Label Grid.Row = "1"
+                                   Grid.Column = "1"
+                                   Text = "{Binding username}" TextColor="Gray"
+                                    />
+
+
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

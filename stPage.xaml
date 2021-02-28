@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Title="my info"
+             x:Class="vrchat_active.Views.stPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Frame x:Name="Framelog" >
+                    <Button Text="logout" TextColor="White" Grid.Row="4" Grid.Column="1" BackgroundColor="#FF5E00" Clicked="logoutButtonClicked" />
+                </Frame>
+
+                
+
+                <Frame x:Name="Framelog2" >
+                    <Grid Padding="10" x:Name="Framelog3" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="30" />
+
+
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+
+                        </Grid.ColumnDefinitions>
+
+
+                        <Label Grid.Column="1"  FontSize="Medium"
+                                   Text="{Binding displayName}"
+                                TextColor="{Binding Trustcolor}"
+                               
+                               
+                                   FontAttributes="Bold" />
+                        <Label Grid.Column="2" FontSize="Medium"
+                                   Text="{Binding username}" TextColor="Gray"
+                                    />
+
+
+
+
+                        <Label Grid.Row = "1"
+                                   Grid.Column = "1" FontSize="Medium" FontAttributes="Bold" TextColor="Gray"
+                                   Text = "last login"
+                                    />
+                        <Label Grid.Row = "1"
+                                   Grid.Column = "2" FontSize="Medium"
+                                   Text = "{Binding last_login}" TextColor="Gray"
+                                    />
+                        <Label Grid.Row = "2" Text= "{Binding status} " Grid.Column = "1" FontSize="Small" TextColor="{Binding instcolor}"/>
+
+                    </Grid>
+
+                </Frame>
+
+
+                <Frame x:Name="Framelog4" >
+                    <Grid Padding="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+
+
+
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+
+
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.RowSpan="4" 
+                                   Source="{Binding ImageUrl}" 
+                                   Aspect="AspectFill"
+                                   HeightRequest="150"
+                                   WidthRequest="300" />
+
+                    </Grid>
+                </Frame>
+
+
+
+
+                <Label Grid.Row = "0" Grid.Column = "0" Text= "Description" FontSize="Small" FontAttributes="Bold" TextColor="Gray" />
+
+                <Label  x:Name="Descriptionsv" Grid.Row = "1"  Grid.Column = "0" Text= "{Binding statusDescription}" FontSize="Small" TextColor="Gray" />
+
+                <Label Grid.Row = "2"  Grid.Column = "0" Text= "Bio" FontSize="Small" FontAttributes="Bold"  TextColor="Gray" />
+
+                <Label x:Name="Biosv"  Grid.Row = "3"  Grid.Column = "0" Text= "{Binding Bio}" FontSize="Small" TextColor="Gray"  />
+
+
+
+
+                <Label Text= "usid" FontSize="Small" FontAttributes="Bold" TextColor="Gray" />
+                <Label x:Name="usid2" Text= "{Binding id}" FontSize="Small" TextColor="Gray"  />
+
+                <Label  Text= "allowAvatarCopying" FontSize="Small" FontAttributes="Bold" TextColor="Gray" />
+                <Label   Text= "{Binding allowAvatarCopying}" FontSize="Small" TextColor="Gray" />
+
+                <Label  Text= "TrustLevel" FontSize="Small" FontAttributes="Bold"  TextColor="Gray" />
+                <Label   Text= "{Binding TrustLevels}" FontSize="Small" TextColor="Gray"  />
+
+                <Label Text= "homeLocation" FontSize="Small" FontAttributes="Bold" TextColor="Gray" />
+                <Label  Text= "{Binding homeLocation}" FontSize="Small" TextColor="Gray" />
+
+
+
+
+
+                <ListView x:Name="list" HasUnevenRows="true" ItemsSource="{Binding tags}" >
+
+                </ListView>
+
+
+
+
+
+
+            </StackLayout>
+
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

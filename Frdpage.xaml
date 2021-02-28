@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="vrchat_active.Views.Frdpage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+
+
+
+                <Button  x:Name ="buttpro"  Text = "Invite me" TextColor = "White"  BackgroundColor = "DarkSlateBlue"  Clicked = "OnButtonClicked"  />
+
+               
+
+                <Label   FontSize="Medium"
+                                 Text="{Binding Name}" 
+                                 FontAttributes="Bold"
+                     TextColor="{Binding Trustcol}"/>
+                <Label   FontSize="Medium" TextColor="Gray"
+                                 Text="{Binding usNa}"
+                                    />
+
+
+                <Label  Text= "{Binding statu} "  FontSize="Small" TextColor="{Binding instcol}"/>
+
+
+
+                <Frame x:Name="Framelog" CornerRadius="20">
+                   
+                        
+
+                        <Image Grid.RowSpan="4" 
+                                   Source="{Binding ImageUrl}" 
+                                   Aspect="AspectFill"
+                                   HeightRequest="150"
+                                   WidthRequest="300" />
+                    
+
+
+
+
+                </Frame>
+
+
+
+                <Frame x:Name="Framelog2" CornerRadius="30" >
+
+                    <Label 
+                                    FontSize="Small"
+                                   Text = "{Binding statusDescription}" TextColor="Gray"
+                                    />
+                    
+                    
+                    
+                </Frame>
+
+
+                <Frame  CornerRadius="20" >
+
+                    <Label  
+                                 Text = "{Binding   bio}" TextColor="Gray"
+                                  />
+
+                </Frame>
+
+
+                <Frame  CornerRadius="20" >
+
+                    <Label  
+                                 x:Name ="usid" Text = "{Binding usid}"
+                                TextColor="Gray" />
+                </Frame>
+                <Frame CornerRadius="20" >
+                    <Label  
+                                 Text = "{Binding TrustLevel}" TextColor="Gray" 
+                                 />
+
+                </Frame>
+
+
+
+                <Frame x:Name="Framelog3"  CornerRadius="20" >
+
+                    <Grid Padding="10" x:Name="Framelog4" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+
+
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+
+
+                        </Grid.ColumnDefinitions>
+
+
+                        <Label Grid.Column="0"  FontSize="Medium" TextColor="Gray"
+                                   Text="{Binding Location}"
+                                   FontAttributes="Bold"
+                       />
+                        <Label Grid.Column="0" Grid.Row = "1"  FontSize="Medium" TextColor="Gray"
+                                   Text="{Binding mapinst} "
+                                    />
+
+                    </Grid>
+                </Frame>
+                <Frame x:Name="Framelog5" CornerRadius="20" >
+
+                   
+
+                        <Image Grid.RowSpan="4"
+                           Source="{Binding Locationimg}"
+                           Aspect="AspectFill"
+                           HeightRequest="150"
+                           WidthRequest="300" />
+
+                    
+                </Frame>
+
+               
+
+                <Label Grid.Column="1" Grid.Row = "1"  FontSize="Medium" TextColor="Gray"
+                                   Text="start uri" 
+                                     FontAttributes="Bold"/>
+
+
+              
+                
+                
+                
+                <Entry x:Name="locationid" TextColor="Gray"
+                                 Text = "{Binding location}"
+                                 VerticalOptions = "End" />
+
+
+                <Entry x:Name="mapuri" TextColor="Gray"
+                                 Text = "{Binding mapuri}"
+                                 VerticalOptions = "End" />
+
+
+
+
+
+
+                <Button Text="unfriend" TextColor="White" Clicked="OnButtonClicked2" BackgroundColor="Red" IsEnabled="{Binding notworld}" />
+
+
+
+                <ListView x:Name="ustags" HasUnevenRows="true" ItemsSource="{Binding ustags}" >
+                 
+                </ListView>
+
+
+                
+
+
+            </StackLayout>
+
+
+
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

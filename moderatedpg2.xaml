@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Title="received"
+             x:Class="vrchat_active.Views.moderatedpg2">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Button Text="search" TextColor="White" Grid.Row="3" Grid.Column="1" BackgroundColor="DarkSlateBlue" Clicked="OnButtonClicked" IsEnabled="{Binding  set}" />
+            <ListView x:Name="listpro" IsPullToRefreshEnabled="False"
+                  
+            ItemsSource="{Binding Moderlist}"
+                  HasUnevenRows="true"
+                  
+                  >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="20" />
+                                    <RowDefinition Height="20" />
+                                    <RowDefinition Height="20" />
+
+
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+
+                                </Grid.ColumnDefinitions>
+
+
+
+
+                                <Label Grid.Column="1" 
+                                   Text="{Binding sourceDisplayName}" TextColor="Gray"
+                                   FontAttributes="Bold" />
+
+
+                                <Label Grid.Row = "1"
+                                   Grid.Column = "1"
+                                   Text = "{Binding type}" TextColor="Gray"
+                                    />
+                                <Label Grid.Row = "2"
+                                   Grid.Column = "1" 
+                                   Text = "{Binding created}" TextColor="Gray"
+                                    />
+
+
+
+
+
+
+
+
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

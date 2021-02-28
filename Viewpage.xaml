@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:vrchat_active"
+             mc:Ignorable="d"
+              Title="online"
+             x:Class="vrchat_active.Views.Viewpage">
+    <ContentPage.Content>
+        <StackLayout>
+
+            
+
+
+            <StackLayout Orientation="Horizontal">
+
+
+                
+
+                <Label Text= "{Binding userName}" FontSize="Small"  TextColor="Gray" FontAttributes="Bold" />
+                        <Label Text= "            " FontSize="Small" FontAttributes="None" />
+                        <Label Text= "{Binding onlineNum}"  TextColor="Gray"  FontAttributes="Bold" />
+
+                    
+
+
+
+                        <Label Text= "online.. " FontSize="Small" TextColor="Gray" FontAttributes="None" VerticalOptions="FillAndExpand" />
+                        <ProgressBar x:Name="styledProgressBar"  
+                                
+                            
+                             
+                              ProgressColor="#368AFF"
+                             VerticalOptions="FillAndExpand"
+                             HorizontalOptions="FillAndExpand" />
+
+
+
+
+
+
+            </StackLayout>
+
+
+            <ListView x:Name="listpro" IsPullToRefreshEnabled="True"
+                  ItemSelected="OnSelection"
+            ItemsSource="{Binding userlist}"
+                  HasUnevenRows="true"
+                  
+                  >
+
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell >
+                            <Frame BackgroundColor = "{Binding map}" CornerRadius="10" Padding="1" >
+                                <Grid Padding="1">
+
+
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="20" />
+                                        <RowDefinition Height="20" />
+                                        <RowDefinition Height="{Binding map2}" />
+
+
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+
+
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image Grid.RowSpan="3" 
+                                   Source="{Binding ImageUrl}" 
+                                   Aspect="AspectFill"
+                                   HeightRequest="{Binding map2}"
+                                   WidthRequest="100" />
+
+                                    <Label Grid.Column="1" 
+                                   Text="{Binding Name}"
+                                   FontAttributes="Bold" TextColor="{Binding Trustcol}" />
+
+
+                                    <Label Grid.Row = "1"
+                                   Grid.Column = "1"
+                                   Text = "{Binding Location}" TextColor="Gray"
+                                    />
+
+
+                                    <Label Grid.Row = "2"
+                                   Grid.Column = "1"
+                                   Text = "{Binding mapinst}"
+                                   VerticalOptions = "End" TextColor="{Binding instcol}"
+                                       
+                                   />
+
+
+
+
+
+
+
+
+
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <local:AdMobView AdUnitId="ca-app-pub-1203093982928694/3279120446"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
